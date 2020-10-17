@@ -3,33 +3,14 @@
 
 # This continuous integration pipeline is triggered anytime a user pushes code to the repo.
 # This pipeline builds the Wpf project, runs unit tests, then saves the MSIX build artifact.
-name:  WPF Continuous Integration
+name: Example2.NetFramework.CI
 
-# Trigger on every master branch push and pull request
-on:
-  push:
-    branches:
-      -  main
+on: [push]
 
 jobs:
-
   build:
 
-    strategy:
-      matrix:
-        targetplatform: ['Debug|AnyCPU, 'Release|AnyCPU']
-
     runs-on: windows-latest
-
-    env:
-      #App_Packages_Directory: AppPackages
-      #SigningCertificate: GitHubActionsDemo.pfx
-      Solution_Path: WPFApp-GitHubActions.sln
-      #Test_Project_Path: MyWpfApp.Tests\MyWpfApp.Tests.csproj
-      #Wpf_Project_Path: MyWpfApp\MyWpfApp.csproj
-      #Wap_Project_Directory: MyWpfApp.Package
-      #Wap_Project_Name: MyWpfApp.Package.wapproj
-
 
     steps:
     - uses: actions/checkout@v1
@@ -38,6 +19,7 @@ jobs:
       with:
         dotnet-version: 2.2.108
     - name: Build with dotnet
-      run: dotnet build --configuration 'Release|AnyCPU'
-    # - name: And then we test it
-    #  run: dotnet test --verbosity normal
+      run: dotnet build --configuration Release
+    - name: And then we test it
+      run: dotnet test --verbosity normal
+      
