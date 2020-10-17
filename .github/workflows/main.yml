@@ -25,5 +25,5 @@ jobs:
       run: nuget restore WPFApp-GitHubActions.sln
       
     - name: Build the solution
-      run: msbuild WPFApp-GitHubActions.sln /p:Configuration='Release|AnyCPU'
+      run: msbuild WPFApp-GitHubActions.sln /p:Configuration='Release'
       
