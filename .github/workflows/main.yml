@@ -9,7 +9,6 @@ name:  WPF Continuous Integration
 on:
   push:
     branches:
-      - '!master'
       -  master
 
 jobs:
