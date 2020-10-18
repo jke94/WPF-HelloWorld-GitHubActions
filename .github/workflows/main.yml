@@ -26,4 +26,9 @@ jobs:
       
     - name: Build the solution
       run: msbuild WPFApp-GitHubActions.sln /p:platform="Any CPU" /p:Configuration='Release'
-      
+    
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: MyApplication
+        path: "WPFApp/bin/Release"  
