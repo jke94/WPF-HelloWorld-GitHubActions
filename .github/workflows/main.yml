@@ -21,13 +21,7 @@ jobs:
         
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v1.0.0
-      
-    - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.2
-      
-    - name: Restore NuGet packages
-      run: nuget restore WPFApp-GitHubActions.sln
-      
+         
     - name: Build Solution
       run: dotnet build $env:Solution_Path
     
