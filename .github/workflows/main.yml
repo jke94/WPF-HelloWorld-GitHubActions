@@ -24,7 +24,7 @@ jobs:
     - name: Setup MSBuild and Build the solution
       uses: microsoft/setup-msbuild@v1.0.2
 
-    - name: Build solution: WPFApp-GitHubActions.sln
+    - name: Build solution WPFApp-GitHubActions.sln
       run:  msbuild WPFApp-GitHubActions.sln /p:platform="Any CPU" /p:Configuration='Release'
     
     - name: Upload artifact
