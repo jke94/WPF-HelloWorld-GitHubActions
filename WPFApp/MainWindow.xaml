@@ -3,10 +3,53 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPFApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="1000">
-    <Grid>
-        
+    
+    <Grid   HorizontalAlignment="Stretch"
+            VerticalAlignment="Center">
+
+        <StackPanel Orientation="Vertical">
+
+            <Border BorderThickness="5"
+                    BorderBrush="Black"
+                    Margin="10"
+                    Background="OldLace">
+
+                <TextBlock  Text="A simple WFP application"
+                            FontSize="40"
+                            Margin="20"
+                            HorizontalAlignment="Center">
+                </TextBlock>
+
+            </Border>
+
+            <Border BorderThickness="5"
+                    BorderBrush="Black"
+                    Margin="10"
+                    Background="BlanchedAlmond">
+
+                <TextBlock  Text="GitHub User: jke94"
+                            FontSize="25"
+                            Margin="20">
+                </TextBlock>
+
+            </Border>
+
+            <Border BorderThickness="5"
+                    BorderBrush="Black"
+                    Margin="10"
+                    Background="BlanchedAlmond">
+
+                <TextBlock  Text="GitHub Repository name: jke94/WPF-HelloWorld-GitHubActions "
+                            FontSize="25"
+                            Margin="20">
+                </TextBlock>
+
+            </Border>
+
+        </StackPanel>
+
     </Grid>
+    
 </Window>

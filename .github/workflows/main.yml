@@ -1,11 +1,8 @@
-# Copyright (c) Microsoft Corporation.
-# Licensed under the MIT license.
+# Application CI/CD
 
-# This continuous integration pipeline is triggered anytime a user pushes code to the repo.
-# This pipeline builds the Wpf project, runs unit tests, then saves the MSIX build artifact.
-name: Application C/I
+name: Application CI/CD
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
 
@@ -22,16 +19,16 @@ jobs:
       uses: actions/setup-dotnet@v1.7.2
       
     - name: Restore NuGet packages
-      run: nuget restore WPFApp-GitHubActions.sln
+      run:  nuget restore WPFApp-GitHubActions.sln
       
     - name: Setup MSBuild and Build the solution
       uses: microsoft/setup-msbuild@v1.0.2
 
-    - name: Build solution WPFApp-GitHubActions.sln
-      run: msbuild WPFApp-GitHubActions.sln /p:platform="Any CPU" /p:Configuration='Release'
+    - name: Build solution: WPFApp-GitHubActions.sln
+      run:  msbuild WPFApp-GitHubActions.sln /p:platform="Any CPU" /p:Configuration='Release'
     
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: MyApplication
-        path: "WPFApp/bin/Release"  
+        name: WPFApp-GitHubActionsActions
+        path: "WPFApp/bin/Release"
