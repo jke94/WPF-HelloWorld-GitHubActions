@@ -3,7 +3,7 @@
 
 # This continuous integration pipeline is triggered anytime a user pushes code to the repo.
 # This pipeline builds the Wpf project, runs unit tests, then saves the MSIX build artifact.
-name: Example2.NetFramework.CI
+name: Application C/I
 
 on: [push]
 
@@ -14,6 +14,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
+
     - name: Checkout code
       uses: actions/checkout@v2.3.3
     
@@ -25,6 +26,8 @@ jobs:
       
     - name: Setup MSBuild and Build the solution
       uses: microsoft/setup-msbuild@v1.0.2
+
+    - name: Build solution WPFApp-GitHubActions.sln
       run: msbuild WPFApp-GitHubActions.sln /p:platform="Any CPU" /p:Configuration='Release'
     
     - name: Upload artifact
